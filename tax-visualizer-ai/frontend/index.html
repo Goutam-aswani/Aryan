@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Visualizer AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Tax Visualizer with Gen AI</h1>
+    <div style="text-align:center; color:#3a5edb; font-size:1.15em; margin-bottom:18px;">Calculate, compare, and understand your Indian income tax with ease.</div>
+        <div style="margin-bottom:18px;">
+            <h2 style="color:#23408e; font-size:1.2em; margin-bottom:8px;">Enter Your Details</h2>
+        </div>
+        <form id="tax-form">
+            <label>Total Income: <input type="number" id="income" required></label>
+            <button type="button" id="calc-btn">Calculate Tax <span id="calc-spinner" style="display:none" class="spinner"></span></button>
+            <button type="button" id="compare-btn">Compare Regimes <span id="compare-spinner" style="display:none" class="spinner"></span></button>
+            <button type="button" id="download-btn">Download Report <span id="download-spinner" style="display:none" class="spinner"></span></button>
+        </form>
+        <div style="margin-bottom:18px;">
+            <h2 style="color:#23408e; font-size:1.2em; margin-bottom:8px;">Summary</h2>
+        </div>
+        <div id="summary">
+            <div class="summary-block" id="summary-old"></div>
+            <div class="summary-block" id="summary-new"></div>
+        </div>
+        <div style="text-align:right; margin-top:8px;">
+            <button id="clear-saved" style="background:#e74c3c; margin-right:10px;">Clear saved context</button>
+        </div>
+        <div style="margin-bottom:18px;">
+            <h2 style="color:#23408e; font-size:1.2em; margin-bottom:8px;">Tax Comparison Chart</h2>
+        </div>
+        <div id="charts">
+            <canvas id="taxChart" width="400" height="200"></canvas>
+        </div>
+        <div style="margin-bottom:18px;">
+            <h2 style="color:#23408e; font-size:1.2em; margin-bottom:8px;">AI Tax Assistant</h2>
+        </div>
+        <div class="chatbox">
+            <div id="chat-log"></div>
+            <input type="text" id="chat-input" placeholder="Ask the AI assistant...">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+    <footer style="text-align:center; color:#888; font-size:0.98em; margin-top:32px;">&copy; 2025 Tax Visualizer with Gen AI. All rights reserved.</footer>
+    <div class="toast-container" id="toast-container"></div>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js Data Labels plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <script src="script.js"></script>
+</body>
+</html>
