@@ -1,7 +1,7 @@
 
 from langchain_groq import ChatGroq
 
-GROK_API_KEY = "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"
+GROK_API_KEY = os.getenv("GROKAPI")
 llm = ChatGroq(model ="llama-3.1-8b-instant" ,api_key=GROK_API_KEY)
 
 def ask_ai(data):
